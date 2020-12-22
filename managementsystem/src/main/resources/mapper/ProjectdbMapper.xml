@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.managementsystem.Mapper.ProjectMapperdb">
+
+    <!--id对应接口中的方法，名字要一样，parameterType是方法的参数类型，
+    resultType是查询返回的类型，需要注意的是，这里的SQL语句后面不能加分号，变量不能加引号-->
+
+    <select id="getByProjectCode" parameterType="String" resultType="Projectdb">
+        select * from projectdb where projectcode = #{projectcode}
+    </select>
+
+    <select id="getByProjectList"  resultType="Projectdb">
+        select * from projectdb
+    </select>
+
+    <insert id="insertProjectdb" parameterType="Projectdb">
+        insert into projectdb(projectcode,qiangstandardn,qiangstandarda,qiangstandardwithaccn,qiangstandardwithacca,qiangstandardwithaccholen,qiangstandardwithaccholea,qiangnonstandardn,qiangnonstandarda,qiangnonstandardwithaccn,qiangnonstandardwithacca,qiangvarlayernonstandardn,qiangvarlayernonstandarda,qiangvarlayernonstandardwithaccn,qiangvarlayernonstandardwithacca,
+        liangstandardn,liangstandarda,liangstandardwithaccn,liangstandardwithacca,liangstandardwithaccholen,liangstandardwithaccholea,liangnonstandardn,liangnonstandarda,liangnonstandardwithaccn,liangnonstandardwithacca,liangvarlayernonstandardn,liangvarlayernonstandarda,liangvarlayernonstandardwithaccn,liangvarlayernonstandardwithacca,
+        loumianstandardn,loumianstandarda,loumianstandardwithaccn,loumianstandardwithacca,loumianstandardwithaccholen,loumianstandardwithaccholea,loumiannonstandardn,loumiannonstandarda,loumiannonstandardwithaccn,loumiannonstandardwithacca,loumianvarlayernonstandardn,loumianvarlayernonstandarda,loumianvarlayernonstandardwithaccn,loumianvarlayernonstandardwithacca,
+        jiedianstandardn,jiedianstandarda,jiedianstandardwithaccn,jiedianstandardwithacca,jiedianstandardwithaccholen,jiedianstandardwithaccholea,jiediannonstandardn,jiediannonstandarda,jiediannonstandardwithaccn,jiediannonstandardwithacca,jiedianvarlayernonstandardn,jiedianvarlayernonstandarda,jiedianvarlayernonstandardwithaccn,jiedianvarlayernonstandardwithacca,
+        loutistandardn,loutistandarda,loutistandardwithaccn,loutistandardwithacca,loutistandardwithaccholen,loutistandardwithaccholea,loutinonstandardn,loutinonstandarda,loutinonstandardwithaccn,loutinonstandardwithacca,loutivarlayernonstandardn,loutivarlayernonstandarda,loutivarlayernonstandardwithaccn,loutivarlayernonstandardwithacca,
+        diaomostandardn,diaomostandarda,diaomostandardwithaccn,diaomostandardwithacca,diaomostandardwithaccholen,diaomostandardwithaccholea,diaomononstandardn,diaomononstandarda,diaomononstandardwithaccn,diaomononstandardwithacca,diaomovarlayernonstandardn,diaomovarlayernonstandarda,diaomovarlayernonstandardwithaccn,diaomovarlayernonstandardwithacca,albackstandardn,albackstandardl,albacknonstandardn,albacknonstandardl,ironbacknonstandardn,ironbacknonstandardl,anglesteeln,anglesteell,squaretuben,squaretubel,ironbox) values(
+        #{projectcode},#{qiangstandardn},#{qiangstandarda},#{qiangstandardwithaccn},#{qiangstandardwithacca},#{qiangstandardwithaccholen},#{qiangstandardwithaccholea},#{qiangnonstandardn},#{qiangnonstandarda},#{qiangnonstandardwithaccn},#{qiangnonstandardwithacca},#{qiangvarlayernonstandardn},#{qiangvarlayernonstandarda},#{qiangvarlayernonstandardwithaccn},#{qiangvarlayernonstandardwithacca},
+        #{liangstandardn},#{liangstandarda},#{liangstandardwithaccn},#{liangstandardwithacca},#{liangstandardwithaccholen},#{liangstandardwithaccholea},#{liangnonstandardn},#{liangnonstandarda},#{liangnonstandardwithaccn},#{liangnonstandardwithacca},#{liangvarlayernonstandardn},#{liangvarlayernonstandarda},#{liangvarlayernonstandardwithaccn},#{liangvarlayernonstandardwithacca},
+        #{loumianstandardn},#{loumianstandarda},#{loumianstandardwithaccn},#{loumianstandardwithacca},#{loumianstandardwithaccholen},#{loumianstandardwithaccholea},#{loumiannonstandardn},#{loumiannonstandarda},#{loumiannonstandardwithaccn},#{loumiannonstandardwithacca},#{loumianvarlayernonstandardn},#{loumianvarlayernonstandarda},#{loumianvarlayernonstandardwithaccn},#{loumianvarlayernonstandardwithacca},
+        #{jiedianstandardn},#{jiedianstandarda},#{jiedianstandardwithaccn},#{jiedianstandardwithacca},#{jiedianstandardwithaccholen},#{jiedianstandardwithaccholea},#{jiediannonstandardn},#{jiediannonstandarda},#{jiediannonstandardwithaccn},#{jiediannonstandardwithacca},#{jiedianvarlayernonstandardn},#{jiedianvarlayernonstandarda},#{jiedianvarlayernonstandardwithaccn},#{jiedianvarlayernonstandardwithacca},
+        #{loutistandardn},#{loutistandarda},#{loutistandardwithaccn},#{loutistandardwithacca},#{loutistandardwithaccholen},#{loutistandardwithaccholea},#{loutinonstandardn},#{loutinonstandarda},#{loutinonstandardwithaccn},#{loutinonstandardwithacca},#{loutivarlayernonstandardn},#{loutivarlayernonstandarda},#{loutivarlayernonstandardwithaccn},#{loutivarlayernonstandardwithacca},
+        #{diaomostandardn},#{diaomostandarda},#{diaomostandardwithaccn},#{diaomostandardwithacca},#{diaomostandardwithaccholen},#{diaomostandardwithaccholea},#{diaomononstandardn},#{diaomononstandarda},#{diaomononstandardwithaccn},#{diaomononstandardwithacca},#{diaomovarlayernonstandardn},#{diaomovarlayernonstandarda},#{diaomovarlayernonstandardwithaccn},#{diaomovarlayernonstandardwithacca},#{qiangalbackstandardn},#{qiangalbackstandardl},#{qiangalbacknonstandardn},#{qiangalbacknonstandardl},#{qiangironbacknonstandardn},#{qiangironbacknonstandardl},
+        #{loutialbackstandardn},#{loutialbackstandardl},#{loutialbacknonstandardn},#{loutialbacknonstandardl},#{loutiironbacknonstandardn},#{loutiironbacknonstandardl},#{anglesteeln},#{anglesteell},#{squaretuben},#{squaretubel},#{ironbox}
+        )
+    </insert>
+
+    <update id="updateProjectqiang" parameterType="Projectdb">
+        update projectdb set
+        qiangstandardn=#{qiangstandardn},qiangstandarda=#{qiangstandarda},qiangstandardwithaccn=#{qiangstandardwithaccn},qiangstandardwithacca=#{qiangstandardwithacca},qiangstandardwithaccholen=#{qiangstandardwithaccholen},qiangstandardwithaccholea=#{qiangstandardwithaccholea},qiangnonstandardn=#{qiangnonstandardn},qiangnonstandarda=#{qiangnonstandarda},qiangnonstandardwithaccn=#{qiangnonstandardwithaccn},qiangnonstandardwithacca=#{qiangnonstandardwithacca},qiangvarlayernonstandardn=#{qiangvarlayernonstandardn},qiangvarlayernonstandarda=#{qiangvarlayernonstandarda},qiangvarlayernonstandardwithaccn=#{qiangvarlayernonstandardwithaccn},qiangvarlayernonstandardwithacca=#{qiangvarlayernonstandardwithacca},
+        qiangalbackstandardn=#{qiangalbackstandardn},qiangalbackstandardl=#{qiangalbackstandardl},qiangalbacknonstandardn=#{qiangalbacknonstandardn},qiangalbacknonstandardl=#{qiangalbacknonstandardl},qiangironbacknonstandardn=#{qiangironbacknonstandardn},qiangironbacknonstandardl=#{qiangironbacknonstandardl}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectliang" parameterType="Projectdb">
+        update projectdb set
+        liangstandardn=#{liangstandardn},liangstandarda=#{liangstandarda},liangstandardwithaccn=#{liangstandardwithaccn},liangstandardwithacca=#{liangstandardwithacca},liangstandardwithaccholen=#{liangstandardwithaccholen},liangstandardwithaccholea=#{liangstandardwithaccholea},liangnonstandardn=#{liangnonstandardn},liangnonstandarda=#{liangnonstandarda},
+        liangnonstandardwithaccn=#{liangnonstandardwithaccn},liangnonstandardwithacca=#{liangnonstandardwithacca},liangvarlayernonstandardn=#{liangvarlayernonstandardn},liangvarlayernonstandarda=#{liangvarlayernonstandarda},liangvarlayernonstandardwithaccn=#{liangvarlayernonstandardwithaccn},liangvarlayernonstandardwithacca=#{liangvarlayernonstandardwithacca}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectloumian" parameterType="Projectdb">
+        update projectdb set
+       loumianstandardn=#{loumianstandardn},loumianstandarda=#{loumianstandarda},loumianstandardwithaccn=#{loumianstandardwithaccn},loumianstandardwithacca=#{loumianstandardwithacca},loumianstandardwithaccholen=#{loumianstandardwithaccholen},loumianstandardwithaccholea=#{loumianstandardwithaccholea},loumiannonstandardn=#{loumiannonstandardn},loumiannonstandarda=#{loumiannonstandarda},
+       loumiannonstandardwithaccn=#{loumiannonstandardwithaccn},loumiannonstandardwithacca=#{loumiannonstandardwithacca},loumianvarlayernonstandardn=#{loumianvarlayernonstandardn},loumianvarlayernonstandarda=#{loumianvarlayernonstandarda},loumianvarlayernonstandardwithaccn=#{loumianvarlayernonstandardwithaccn},loumianvarlayernonstandardwithacca=#{loumianvarlayernonstandardwithacca}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectjiedian" parameterType="Projectdb">
+        update projectdb set
+    jiedianstandardn=#{jiedianstandardn},jiedianstandarda=#{jiedianstandarda},jiedianstandardwithaccn=#{jiedianstandardwithaccn},jiedianstandardwithacca=#{jiedianstandardwithacca},jiedianstandardwithaccholen=#{jiedianstandardwithaccholen},jiedianstandardwithaccholea=#{jiedianstandardwithaccholea},jiediannonstandardn=#{jiediannonstandardn},jiediannonstandarda=#{jiediannonstandarda},jiediannonstandardwithaccn=#{jiediannonstandardwithaccn},
+    jiediannonstandardwithacca=#{jiediannonstandardwithacca},jiedianvarlayernonstandardn=#{jiedianvarlayernonstandardn},jiedianvarlayernonstandarda=#{jiedianvarlayernonstandarda},jiedianvarlayernonstandardwithaccn=#{jiedianvarlayernonstandardwithaccn},jiedianvarlayernonstandardwithacca=#{jiedianvarlayernonstandardwithacca}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectlouti" parameterType="Projectdb">
+        update projectdb set
+    loutistandardn=#{loutistandardn},loutistandarda=#{loutistandarda},loutistandardwithaccn=#{loutistandardwithaccn},loutistandardwithacca=#{loutistandardwithacca},loutistandardwithaccholen=#{loutistandardwithaccholen},loutistandardwithaccholea=#{loutistandardwithaccholea},loutinonstandardn=#{loutinonstandardn},loutinonstandarda=#{loutinonstandarda},loutinonstandardwithaccn=#{loutinonstandardwithaccn},
+    loutinonstandardwithacca=#{loutinonstandardwithacca},loutivarlayernonstandardn=#{loutivarlayernonstandardn},loutivarlayernonstandarda=#{loutivarlayernonstandarda},loutivarlayernonstandardwithaccn=#{loutivarlayernonstandardwithaccn},loutivarlayernonstandardwithacca=#{loutivarlayernonstandardwithacca},
+    loutialbackstandardn=#{loutialbackstandardn},loutialbackstandardl=#{loutialbackstandardl},loutialbacknonstandardn=#{loutialbacknonstandardn},loutialbacknonstandardl=#{loutialbacknonstandardl},loutiironbacknonstandardn=#{loutiironbacknonstandardn},loutiironbacknonstandardl=#{loutiironbacknonstandardl}}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectdiaomo" parameterType="Projectdb">
+        update projectdb set
+  diaomostandardn=#{diaomostandardn},diaomostandarda=#{diaomostandarda},diaomostandardwithaccn=#{diaomostandardwithaccn},diaomostandardwithacca=#{diaomostandardwithacca},diaomostandardwithaccholen=#{diaomostandardwithaccholen},diaomostandardwithaccholea=#{diaomostandardwithaccholea},diaomononstandardn=#{diaomononstandardn},diaomononstandarda=#{diaomononstandarda},diaomononstandardwithaccn=#{diaomononstandardwithaccn},diaomononstandardwithacca=#{diaomononstandardwithacca},
+  diaomovarlayernonstandardn=#{diaomovarlayernonstandardn},diaomovarlayernonstandarda=#{diaomovarlayernonstandarda},diaomovarlayernonstandardwithaccn=#{diaomovarlayernonstandardwithaccn},diaomovarlayernonstandardwithacca=#{diaomovarlayernonstandardwithacca},anglesteeln=#{anglesteeln},anglesteell=#{anglesteell},squaretuben=#{squaretuben},squaretubel=#{squaretubel},ironbox=#{ironbox}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateliangloumian" parameterType="Projectdb">
+        update projectdb set
+         loumianstandardn=#{loumianstandardn},loumianstandarda=#{loumianstandarda},loumianstandardwithaccn=#{loumianstandardwithaccn},loumianstandardwithacca=#{loumianstandardwithacca},loumianstandardwithaccholen=#{loumianstandardwithaccholen},loumianstandardwithaccholea=#{loumianstandardwithaccholea},loumiannonstandardn=#{loumiannonstandardn},loumiannonstandarda=#{loumiannonstandarda},
+       loumiannonstandardwithaccn=#{loumiannonstandardwithaccn},loumiannonstandardwithacca=#{loumiannonstandardwithacca},loumianvarlayernonstandardn=#{loumianvarlayernonstandardn},loumianvarlayernonstandarda=#{loumianvarlayernonstandarda},loumianvarlayernonstandardwithaccn=#{loumianvarlayernonstandardwithaccn},loumianvarlayernonstandardwithacca=#{loumianvarlayernonstandardwithacca},
+        liangstandardn=#{liangstandardn},liangstandarda=#{liangstandarda},liangstandardwithaccn=#{liangstandardwithaccn},liangstandardwithacca=#{liangstandardwithacca},liangstandardwithaccholen=#{liangstandardwithaccholen},liangstandardwithaccholea=#{liangstandardwithaccholea},liangnonstandardn=#{liangnonstandardn},liangnonstandarda=#{liangnonstandarda},
+        liangnonstandardwithaccn=#{liangnonstandardwithaccn},liangnonstandardwithacca=#{liangnonstandardwithacca},liangvarlayernonstandardn=#{liangvarlayernonstandardn},liangvarlayernonstandarda=#{liangvarlayernonstandarda},liangvarlayernonstandardwithaccn=#{liangvarlayernonstandardwithaccn},liangvarlayernonstandardwithacca=#{liangvarlayernonstandardwithacca}
+         where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateliangloumianjiedian" parameterType="Projectdb">
+        update projectdb set
+         loumianstandardn=#{loumianstandardn},loumianstandarda=#{loumianstandarda},loumianstandardwithaccn=#{loumianstandardwithaccn},loumianstandardwithacca=#{loumianstandardwithacca},loumianstandardwithaccholen=#{loumianstandardwithaccholen},loumianstandardwithaccholea=#{loumianstandardwithaccholea},loumiannonstandardn=#{loumiannonstandardn},loumiannonstandarda=#{loumiannonstandarda},
+       loumiannonstandardwithaccn=#{loumiannonstandardwithaccn},loumiannonstandardwithacca=#{loumiannonstandardwithacca},loumianvarlayernonstandardn=#{loumianvarlayernonstandardn},loumianvarlayernonstandarda=#{loumianvarlayernonstandarda},loumianvarlayernonstandardwithaccn=#{loumianvarlayernonstandardwithaccn},loumianvarlayernonstandardwithacca=#{loumianvarlayernonstandardwithacca},
+        liangstandardn=#{liangstandardn},liangstandarda=#{liangstandarda},liangstandardwithaccn=#{liangstandardwithaccn},liangstandardwithacca=#{liangstandardwithacca},liangstandardwithaccholen=#{liangstandardwithaccholen},liangstandardwithaccholea=#{liangstandardwithaccholea},liangnonstandardn=#{liangnonstandardn},liangnonstandarda=#{liangnonstandarda},
+        liangnonstandardwithaccn=#{liangnonstandardwithaccn},liangnonstandardwithacca=#{liangnonstandardwithacca},liangvarlayernonstandardn=#{liangvarlayernonstandardn},liangvarlayernonstandarda=#{liangvarlayernonstandarda},liangvarlayernonstandardwithaccn=#{liangvarlayernonstandardwithaccn},liangvarlayernonstandardwithacca=#{liangvarlayernonstandardwithacca},
+        jiedianstandardn=#{jiedianstandardn},jiedianstandarda=#{jiedianstandarda},jiedianstandardwithaccn=#{jiedianstandardwithaccn},jiedianstandardwithacca=#{jiedianstandardwithacca},jiedianstandardwithaccholen=#{jiedianstandardwithaccholen},jiedianstandardwithaccholea=#{jiedianstandardwithaccholea},jiediannonstandardn=#{jiediannonstandardn},jiediannonstandarda=#{jiediannonstandarda},jiediannonstandardwithaccn=#{jiediannonstandardwithaccn},
+    jiediannonstandardwithacca=#{jiediannonstandardwithacca},jiedianvarlayernonstandardn=#{jiedianvarlayernonstandardn},jiedianvarlayernonstandarda=#{jiedianvarlayernonstandarda},jiedianvarlayernonstandardwithaccn=#{jiedianvarlayernonstandardwithaccn},jiedianvarlayernonstandardwithacca=#{jiedianvarlayernonstandardwithacca}
+         where projectcode = #{projectcode}
+    </update>
+
+    <delete id="deleteProject" parameterType="String">
+        delete from projectdb where projectcode = #{projectcode}
+    </delete>
+
+</mapper>

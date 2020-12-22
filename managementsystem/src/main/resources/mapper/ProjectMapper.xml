@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.managementsystem.Mapper.ProjectMapper">
+
+    <!--id对应接口中的方法，名字要一样，parameterType是方法的参数类型，
+    resultType是查询返回的类型，需要注意的是，这里的SQL语句后面不能加分号，变量不能加引号-->
+
+    <select id="getByProjectCode" parameterType="String" resultType="Project">
+        select * from project where projectcode = #{projectcode}
+    </select>
+
+    <select id="getByProjectList"  resultType="Project">
+        select * from project
+    </select>
+
+    <insert id="insertProject" parameterType="Project">
+        insert into project(projectcode,projectname,projectsource,receivetime,estimatetime,department,projectnumber,
+        deepeningdivision,clientname,marketstaffwithcall,templatesystem,whetherprefab,layerheigh,projectdifficulty,
+        signaturetime,designmanager,qiang,liang,louti,jiedian,loumian,diaomo,startime,realtime,tag,deepfile,designfile) values(
+        #{projectcode},
+        #{projectname},
+        #{projectsource},
+        #{receivetime},
+        #{estimatetime},
+        #{department},
+        #{projectnumber},
+        #{deepeningdivision},
+        #{clientname},
+        #{marketstaffwithcall},
+        #{templatesystem},
+        #{whetherprefab},
+        #{layerheigh},
+        #{projectdifficulty},
+        #{signaturetime},
+        #{designmanager},
+        #{qiang},
+        #{liang},
+        #{louti},
+        #{jiedian},
+        #{loumian},
+        #{diaomo},
+        #{startime},
+        #{realtime},
+        #{tag},
+        #{deepfile},
+        #{designfile}
+        )
+    </insert>
+
+    <update id="updateProjectCode" parameterType="Project">
+        update project set projectcode=#{projectcode} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateDeepfile">
+        update project set deepfile=#{deepfile} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateDesignfile">
+        update project set designfile=#{designfile} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateDeepdistr" parameterType="Project">
+        update project set deepeningdivision=#{deepeningdivision},tag=#{tag} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateFirstDeepo" parameterType="Project">
+        update project set clientname=#{clientname},marketstaffwithcall=#{marketstaffwithcall},
+        templatesystem=#{templatesystem},whetherprefab=#{whetherprefab},
+        layerheigh=#{layerheigh},designmanager=#{designmanager},tag=#{tag} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateLastDeep" parameterType="Project">
+        update project set projectdifficulty=#{projectdifficulty},signaturetime=#{signaturetime},tag=#{tag} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateLastDesign" parameterType="Project">
+        update project set realtime=#{realtime},tag=#{tag} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateTag">
+        update project set tag=#{tag} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateQinput">
+        update project set qianginput=#{qianginput} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateLinput">
+        update project set lianginput=#{lianginput} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateLMinput" >
+        update project set loumianinput=#{loumianinput} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateJieinput">
+        update project set jiedianinput=#{jiedianinput} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateLTinput">
+        update project set loutiinput=#{loutiinput} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateDMinput">
+        update project set diaomoinput=#{diaomoinput} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateDesigndistr" parameterType="Project">
+        update project set qiang=#{qiang},liang=#{liang},louti=#{louti},jiedian=#{jiedian},loumian=#{loumian},diaomo=#{diaomo},startime=#{startime},tag=#{tag} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectName" parameterType="Project">
+        update project set projectname = #{projectname} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateProjectSource" parameterType="Project">
+        update project set projectsource = #{projectsource} where projectcode = #{projectcode}
+    </update>
+
+    <update id="updateCreateProject" parameterType="Project">
+        update project set projectsource = #{projectsource},projectname = #{projectname},projectnumber = #{projectnumber},
+         projectcode = #{projectcode},receivetime = #{receivetime},estimatetime = #{estimatetime}where projectcode = #{projectcode}
+    </update>
+
+    <delete id="deleteProject" parameterType="String">
+        delete from project where projectcode = #{projectcode}
+    </delete>
+
+</mapper>

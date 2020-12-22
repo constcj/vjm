@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.managementsystem.Mapper.ProjectMapperwrong">
+
+    <!--id对应接口中的方法，名字要一样，parameterType是方法的参数类型，
+    resultType是查询返回的类型，需要注意的是，这里的SQL语句后面不能加分号，变量不能加引号-->
+
+    <select id="getByProjectCode" parameterType="String" resultType="Projectwrong">
+        select * from projectwrong where projectcode = #{projectcode}
+    </select>
+
+    <select id="getByProjectList"  resultType="Projectwrong">
+        select * from projectwrong
+    </select>
+
+    <insert id="insertProjectdb" parameterType="Projectwrong">
+        insert into projectwrong(projectcode,qiangalincrease,qiangalreplace,qiangironincrease,qiangironreplace,qiangalbincrease,qiangalbreplace,qiangmountings,
+        liangalincrease,liangalreplace,liangmountings,loumianalincrease,loumianalreplace,loumianmountings,diaomoalincrease,diaomoalreplace,diaomoironincrease,diaomoironreplace,diaomomountings,
+        jiedianalincrease,jiedianalreplace,jiedianmountings,loutialincrease,loutialreplace,loutiironincrease,loutiironreplace,loutialbincrease,loutialbreplace,loutimountings,remark) values(
+       #{projectcode},#{qiangalincrease},#{qiangalreplace},#{qiangironincrease},#{qiangironreplace},#{qiangalbincrease},#{qiangalbreplace},#{qiangmountings},
+       #{liangalincrease},#{liangalreplace},#{liangmountings},#{loumianalincrease},#{loumianalreplace},#{loumianmountings},
+       #{diaomoalincrease},#{diaomoalreplace},#{diaomoironincrease},#{diaomoironreplace},#{diaomomountings},#{jiedianalincrease},#{jiedianalreplace},#{jiedianmountings},
+       #{loutialincrease},#{loutialreplace},#{loutiironincrease},#{loutiironreplace},#{loutialbincrease},#{loutialbreplace},#{loutimountings},#{remark}
+        )
+    </insert>
+
+    <update id="updateProjectwrong" parameterType="Projectwrong">
+    update projectwrong set
+    qiangalincrease=#{qiangalincrease},qiangalreplace=#{qiangalreplace},qiangironincrease=#{qiangironincrease},
+    qiangironreplace=#{qiangironreplace},qiangalbincrease=#{qiangalbincrease},qiangalbreplace=#{qiangalbreplace},
+    qiangmountings=#{qiangmountings},liangalincrease=#{liangalincrease},liangalreplace=#{liangalreplace},liangmountings=#{liangmountings},
+    loumianalincrease=#{loumianalincrease},loumianalreplace=#{loumianalreplace},loumianmountings=#{loumianmountings},
+    jiedianalincrease=#{jiedianalincrease},jiedianalreplace=#{jiedianalreplace},jiedianmountings=#{jiedianmountings},
+    loutialincrease=#{loutialincrease},loutialreplace=#{loutialreplace},loutiironincrease=#{loutiironincrease},
+     loutiironreplace=#{loutiironreplace},loutialbincrease=#{loutialbincrease},loutialbreplace=#{loutialbreplace},loutimountings=#{loutimountings},
+     diaomoalincrease=#{diaomoalincrease},diaomoalincrease=#{diaomoalincrease},diaomoironincrease=#{diaomoironincrease},diaomoironreplace=#{diaomoironreplace},diaomomountings=#{diaomomountings},
+     remark=#{remark} where projectcode = #{projectcode}
+    </update>
+
+    <delete id="deleteProject" parameterType="String">
+        delete from projectdb where projectcode = #{projectcode}
+    </delete>
+
+</mapper>
